@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  apache:
+    image: myapache:latest
+    ports:
+      - 80:80
+    networks:
+      - compose-app-network
+
+  node:
+    image: localhost:5000/mynode:latest
+    networks:
+      - compose-app-network
+
+networks:
+  compose-app-network: {}
